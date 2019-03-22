@@ -2,8 +2,9 @@ package org.app.woker.application;
 
 import org.app.woker.entities.Manager;
 import org.app.woker.entities.Programmer;
-import org.app.woker.entities.QAEngeneer;
+import org.app.woker.entities.QAEngineer;
 import org.app.woker.entities.Worker;
+
 
 public final class WorkerInfoStore {
 
@@ -49,7 +50,7 @@ public final class WorkerInfoStore {
         programmersCount += 1;
     }
 
-    public void add(QAEngeneer worker) {
+    public void add(QAEngineer worker) {
         if (qaEngineers.length <= qaEngineersCount) {
             qaEngineers = extendArrayLength(qaEngineers);
         }
@@ -65,8 +66,8 @@ public final class WorkerInfoStore {
             add((Programmer) worker);
         } else if (worker instanceof Manager) {
             add((Manager) worker);
-        } else if (worker instanceof QAEngeneer) {
-            add((QAEngeneer) worker);
+        } else if (worker instanceof QAEngineer) {
+            add((QAEngineer) worker);
         } else {
             System.out.println("Unknown worker class.");
         }
@@ -79,13 +80,20 @@ public final class WorkerInfoStore {
             return programmers;
         } else if (clazz == Manager.class) {
             return managers;
-        } else if (clazz == QAEngeneer.class) {
+        } else if (clazz == QAEngineer.class) {
             return qaEngineers;
         } else {
             return null;
         }
     }
 
+    /**
+     * Dynamically extend length of array.
+     *
+     * @param source array which should be extended.
+     *
+     * @return array Worker[] with double length of source, and which stores all elements of source array.
+     */
     private Worker[] extendArrayLength(Worker[] source) {
         //create new array with length = source.length * LENGTH_EXTEND_FACTOR
         Worker[] destination = new Worker[source.length * LENGTH_EXTEND_FACTOR];

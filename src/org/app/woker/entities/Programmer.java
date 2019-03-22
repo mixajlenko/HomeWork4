@@ -1,5 +1,10 @@
 package org.app.woker.entities;
 
+/**
+ * Class for representation info about programmer.
+ *
+ * @author alitvinov
+ */
 public class Programmer extends Worker {
 
     public static final String DEFAULT_PROGRAMMER_LANGUAGE = "Java";

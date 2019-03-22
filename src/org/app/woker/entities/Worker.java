@@ -1,5 +1,10 @@
 package org.app.woker.entities;
 
+/**
+ * Basic class for representation of Worker information.
+ *
+ * @author alitvinov
+ */
 public class Worker {
 
     protected final String workerId;

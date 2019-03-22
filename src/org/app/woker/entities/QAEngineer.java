@@ -1,10 +1,15 @@
 package org.app.woker.entities;
 
-public class QAEngeneer extends Worker {
+/*
+ * Class for representation info about QA engineer.
+ *
+ * @author alitvinov
+ */
+public class QAEngineer extends Worker {
 
     private boolean automation;
 
-    public QAEngeneer(String workerId, String workerName, boolean automation) {
+    public QAEngineer(String workerId, String workerName, boolean automation) {
         super(workerId, workerName);
         this.automation = automation;
     }
