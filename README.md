@@ -1,7 +1,7 @@
 # Домашнее задание № 4
 
   1. Сделать FORK с текущего репозитория в свой аккаунт
-  2. Сделать классы-наследники класса org.app.woker.Worker и добавить в них свойства:
+  2. Сделать классы-наследники класса Worker и добавить в них свойства:
         * класс Manager: добавить свойства String project, int expirience
         * класс Programmer: добавить свойства String language, String rate;
         * класс QAEngeneer: добавить свойство boolean automationQA;
