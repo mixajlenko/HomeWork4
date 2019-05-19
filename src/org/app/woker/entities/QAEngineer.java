@@ -5,6 +5,20 @@ package org.app.woker.entities;
  *
  * @author alitvinov
  */
-public class QAEngineer {
+public class QAEngineer extends Worker{
 
+   private boolean automationQa;
+
+    public boolean isAutomationQa() {
+        return automationQa;
+    }
+
+    public void setAutomationQa(boolean automationQa) {
+        this.automationQa = automationQa;
+    }
+
+    @Override
+    public String getWorkerPosition() {
+        return super.getWorkerPosition();
+    }
 }
