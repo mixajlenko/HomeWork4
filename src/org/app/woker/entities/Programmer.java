@@ -1,26 +1,16 @@
 package org.app.woker.entities;
 
-/**
- * Class for representation info about programmer.
- *
- * @author alitvinov
- */
-public class Programmer extends Worker{
+public class Programmer extends Worker {
 
    private String language;
-
    private String rate;
+   private String workerPosition = "Programmer";
 
-    public String getLanguage() {
-        return language;
-    }
+
 
     public void setLanguage(String language) {
-        this.language = language;
-    }
 
-    public String getRate() {
-        return rate;
+        this.language = language;
     }
 
     public void setRate(String rate) {
@@ -31,4 +21,18 @@ public class Programmer extends Worker{
     public String getWorkerPosition() {
         return super.getWorkerPosition();
     }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Worker: ");
+        sb.append("language - ").append(language);
+        sb.append(", rate - ").append(rate);
+        sb.append(", workerId - ").append(workerId);
+        sb.append(", workerName - ").append(workerName);
+        sb.append(", workerPosition - ").append(workerPosition);
+        sb.append(".\n");
+        return sb.toString();
+    }
+
+
 }
