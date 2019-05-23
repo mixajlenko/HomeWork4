@@ -2,11 +2,9 @@ package org.app.woker.entities;
 
 public class Programmer extends Worker {
 
-   private String language;
-   private String rate;
-   private String workerPosition = "Programmer";
-
-
+    private String language;
+    private String rate;
+    private String workerPosition = "Programmer";
 
     public void setLanguage(String language) {
 
@@ -15,11 +13,6 @@ public class Programmer extends Worker {
 
     public void setRate(String rate) {
         this.rate = rate;
-    }
-
-    @Override
-    public String getWorkerPosition() {
-        return super.getWorkerPosition();
     }
 
     @Override
@@ -33,6 +26,4 @@ public class Programmer extends Worker {
         sb.append(".\n");
         return sb.toString();
     }
-
-
 }

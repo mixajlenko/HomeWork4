@@ -4,24 +4,22 @@ import org.app.woker.entities.Manager;
 import org.app.woker.entities.Programmer;
 import org.app.woker.entities.QAEngineer;
 import org.app.woker.entities.Worker;
-
-import java.io.IOException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class OfficeApp {
 
-    public static void main(String[] args) {
-        Scanner reader = new Scanner(System.in);
-        String command = null;
-        OfficeApp test = new OfficeApp();
-        while (command == null || !command.equals("exit")) {
-            command = test.readLine(reader, "add - добавить\n view - показать\n exit - выход");
-            test.application(command);
+    private Scanner scan = new Scanner(System.in);
+
+    private boolean lifeCycle = true;
+
+    public void officeApplication() {
+        while (lifeCycle) {
+        Scanner a = new Scanner(System.in);
+            System.out.println("add - добавить\n view - показать\n exit - выход");
+            application(a.nextLine());
         }
     }
 
-    private Scanner scan = new Scanner(System.in);
 
     public void application(String command) {
         switch (command) {
@@ -32,12 +30,13 @@ public class OfficeApp {
                 WorkerInfoStore.getSingleton().view();
                 break;
             case ("exit"):
-                return;
+                lifeCycle = false;
+                break;
         }
 
     }
 
-    public void add() throws InputMismatchException {
+    public void add() {
         System.out.println("enter the worker type");
         String type = scan.nextLine();
         switch (type) {
@@ -84,10 +83,10 @@ public class OfficeApp {
         }
 
 
-        private String readLine (Scanner consoleInputReader, String message){
-            System.out.println(message);
-            return consoleInputReader.nextLine();
-        }
+//        private String readLine (String message){
+//            System.out.println(message);
+//            return consoleInputReader.nextLine();
+//        }
     }
 
 

@@ -1,16 +1,10 @@
 package org.app.woker.entities;
 
-/*
- * Class for representation info about manager.
- *
- * @author alitvinov
- */
 public class Manager extends Worker{
 
    private String project;
    private Integer expirience;
    private String workerPosition = "Manager";
-
 
     public void setProject(String project) {
         this.project = project;
@@ -34,10 +28,5 @@ public class Manager extends Worker{
         sb.append(", workerPosition - ").append(workerPosition);
         sb.append(".\n");
         return sb.toString();
-    }
-
-    @Override
-    public String getWorkerPosition() {
-        return super.getWorkerPosition();
     }
 }

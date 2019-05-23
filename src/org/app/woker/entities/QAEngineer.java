@@ -1,12 +1,6 @@
 package org.app.woker.entities;
 
-/*
- * Class for representation info about QA engineer.
- *
- * @author alitvinov
- */
 public class QAEngineer extends Worker{
-
 
    private boolean automationQa;
    private String workerPosition = "QAEngeneer";
@@ -25,12 +19,5 @@ public class QAEngineer extends Worker{
         sb.append(".\n");
         return sb.toString();
     }
-
-    @Override
-    public String getWorkerPosition() {
-        return super.getWorkerPosition();
-    }
-
-
 }
 

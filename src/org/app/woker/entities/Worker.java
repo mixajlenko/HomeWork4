@@ -15,28 +15,17 @@ public class Worker {
 
     protected String workerPosition = "Simple worker";
 
-
-    Scanner scan = new Scanner(System.in);
+    private Scanner scan = new Scanner(System.in);
 
     public void console(){
         System.out.println("enter id");
         this.setWorkerId(scan.nextLine());
         System.out.println("enter worker name");
         this.setWorkerName(scan.nextLine());
-
-
-    }
-
-    public String getWorkerId() {
-        return workerId;
     }
 
     public void setWorkerId(String workerId) {
         this.workerId = workerId;
-    }
-
-    public String getWorkerName() {
-        return workerName;
     }
 
     public void setWorkerName(String workerName) {

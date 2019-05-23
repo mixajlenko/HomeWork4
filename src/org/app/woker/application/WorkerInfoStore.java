@@ -15,11 +15,9 @@ public final class WorkerInfoStore {
 
     private int ARRAY_SIZE = 1;
 
-
-    private Manager[] managers = new Manager[ARRAY_SIZE];
-    private Programmer[] programmers = new Programmer[ARRAY_SIZE];
-    private QAEngineer[] qaEngineers = new QAEngineer[ARRAY_SIZE];
-
+    private Worker[] managers = new Worker[ARRAY_SIZE];
+    private Worker[] programmers = new Worker[ARRAY_SIZE];
+    private Worker[] qaEngineers = new Worker[ARRAY_SIZE];
 
     private int mangerCounter = 1;
     private int qaengeneerCounter = 1;
@@ -32,71 +30,44 @@ public final class WorkerInfoStore {
     private WorkerInfoStore() {
     }
 
-
     public void add(Manager worker) {
-        Manager[] destination;
-        if (mangerCounter == managers.length) {
+        if (managers.length < mangerCounter) {
+            managers = newArrayLength(managers);
+            managers[mangerCounter - 1] = worker;
+            mangerCounter++;
+        } else {
             for (int i = 0; i < managers.length; i++) {
                 managers[i] = worker;
                 mangerCounter++;
             }
-        } else {
-            destination = new Manager[mangerCounter];
-            System.arraycopy(managers, 0, destination, 0, managers.length);
-            destination[mangerCounter - 1] = worker;
-            managers = destination;
-            mangerCounter++;
-//            System.out.println(Arrays.toString(destination));
-
         }
-
-//        System.out.println(Arrays.toString(managers) + "ssssssss");
-//        System.out.println(mangerCounter);
-
     }
 
 
     public void add(Programmer worker) {
-        Programmer[] destination;
-        if (programmerCounter == programmers.length) {
+        if (programmers.length < programmerCounter) {
+            programmers = newArrayLength(programmers);
+            programmers[programmerCounter - 1] = worker;
+            programmerCounter++;
+        } else {
             for (int i = 0; i < programmers.length; i++) {
                 programmers[i] = worker;
                 programmerCounter++;
             }
-        } else {
-            destination = new Programmer[programmerCounter];
-            System.arraycopy(programmers, 0, destination, 0, programmers.length);
-            destination[programmerCounter - 1] = worker;
-            programmers = destination;
-            programmerCounter++;
-//            System.out.println(Arrays.toString(destination));
-
         }
-
-//        System.out.println(Arrays.toString(programmers) + "ssssssss");
-//        System.out.println(programmerCounter);
     }
 
-
     public void add(QAEngineer worker) {
-        QAEngineer[] destination;
-        if (qaengeneerCounter == qaEngineers.length) {
+        if (qaEngineers.length < qaengeneerCounter) {
+            qaEngineers = newArrayLength(qaEngineers);
+            qaEngineers[qaengeneerCounter - 1] = worker;
+            qaengeneerCounter++;
+        } else {
             for (int i = 0; i < qaEngineers.length; i++) {
                 qaEngineers[i] = worker;
                 qaengeneerCounter++;
             }
-        } else {
-            destination = new QAEngineer[qaengeneerCounter];
-            System.arraycopy(qaEngineers, 0, destination, 0, qaEngineers.length);
-            destination[qaengeneerCounter - 1] = worker;
-            qaEngineers = destination;
-            qaengeneerCounter++;
-//            System.out.println(Arrays.toString(destination));
-
         }
-
-//        System.out.println(Arrays.toString(qaEngineers) + "ssssssss");
-//        System.out.println(qaengeneerCounter);
     }
 
     public void add(Worker worker) {
@@ -116,21 +87,28 @@ public final class WorkerInfoStore {
         System.out.println("what are you want to see?:\nWorker by type (p,m,q)\n");
         Scanner scan = new Scanner(System.in);
         String searchByType = scan.nextLine();
-        switch (searchByType){
-            case("p"):
+        switch (searchByType) {
+            case ("p"):
                 System.out.println(Arrays.toString(programmers));
                 break;
-            case("m"):
+            case ("m"):
                 System.out.println(Arrays.toString(managers));
                 break;
-            case("q"):
+            case ("q"):
                 System.out.println(Arrays.toString(qaEngineers));
                 break;
-                default:
-                    System.out.println("unknown command");
+            default:
+                System.out.println("unknown command");
+        }
+
+    }
+
+    private Worker[] newArrayLength(Worker[] oldArrayLength) {
+        Worker[] destination = new Worker[oldArrayLength.length + 1];
+        System.arraycopy(oldArrayLength, 0, destination, 0, oldArrayLength.length);
+        return destination;
     }
 }
-    }
 
 
 
