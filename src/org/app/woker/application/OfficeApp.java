@@ -20,7 +20,6 @@ public class OfficeApp {
         }
     }
 
-
     public void application(String command) {
         switch (command) {
             case ("add"):

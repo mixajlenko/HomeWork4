@@ -36,10 +36,8 @@ public final class WorkerInfoStore {
             managers[mangerCounter - 1] = worker;
             mangerCounter++;
         } else {
-            for (int i = 0; i < managers.length; i++) {
-                managers[i] = worker;
+                managers[0] = worker;
                 mangerCounter++;
-            }
         }
     }
 
@@ -50,10 +48,8 @@ public final class WorkerInfoStore {
             programmers[programmerCounter - 1] = worker;
             programmerCounter++;
         } else {
-            for (int i = 0; i < programmers.length; i++) {
-                programmers[i] = worker;
+                programmers[0] = worker;
                 programmerCounter++;
-            }
         }
     }
 
@@ -63,21 +59,19 @@ public final class WorkerInfoStore {
             qaEngineers[qaengeneerCounter - 1] = worker;
             qaengeneerCounter++;
         } else {
-            for (int i = 0; i < qaEngineers.length; i++) {
-                qaEngineers[i] = worker;
+                qaEngineers[0] = worker;
                 qaengeneerCounter++;
-            }
         }
     }
 
     public void add(Worker worker) {
 
         if (worker instanceof Programmer) {
-            this.add((Programmer) worker);
+            add((Programmer) worker);
         } else if (worker instanceof Manager) {
-            this.add((Manager) worker);
+            add((Manager) worker);
         } else if (worker instanceof QAEngineer) {
-            this.add((QAEngineer) worker);
+            add((QAEngineer) worker);
         } else {
             System.out.println("Error");
         }
