@@ -2,11 +2,6 @@ package org.app.woker.entities;
 
 import java.util.Scanner;
 
-/**
- * Basic class for representation of Worker information.
- *
- * @author alitvinov
- */
 public class Worker {
 
     protected String workerId;

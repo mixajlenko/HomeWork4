@@ -32,7 +32,6 @@ public class OfficeApp {
                 lifeCycle = false;
                 break;
         }
-
     }
 
     public void add() {
@@ -48,7 +47,6 @@ public class OfficeApp {
                 ((Programmer) w).setRate(scan.nextLine());
                 WorkerInfoStore.getSingleton().add(w);
                 System.out.println("\nworker is successfully added\n");
-                //this.application();
                 break;
 
             case ("Manager"):
@@ -58,14 +56,6 @@ public class OfficeApp {
                 ((Manager) m).setProject(scan.nextLine());
                 System.out.println("enter worker experience");
                 ((Manager) m).setExpirience(scan.nextInt());
-//                while ( ((Manager) m).getExpirience() == 0) {
-//                    try {
-//                        ((Manager) m).setExpirience(scan.nextInt());
-//                    } catch (InputMismatchException e) {
-//                        System.out.println("you need enter value of expirience (int)\nenter worker experience\n");
-//                    }
-//                }
-                    //while (!scan.hasNextInt())
                     WorkerInfoStore.getSingleton().add(m);
                     System.out.println("\nworker is successfully added\n");
                     break;
@@ -80,12 +70,6 @@ public class OfficeApp {
                         break;
                 }
         }
-
-
-//        private String readLine (String message){
-//            System.out.println(message);
-//            return consoleInputReader.nextLine();
-//        }
     }
 
 
